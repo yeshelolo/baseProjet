@@ -33,6 +33,7 @@ class Welcome extends Controller
     public function ajax()
     {
         $action = Tools::getPost("action");
+        // Pour test commit
 
     }
 
