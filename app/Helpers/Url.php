@@ -19,12 +19,12 @@ class Url
     const URL_WRITE     = "write";
     const URL_VERIFY    = "verify";
     const URL_DASH_AJAX = "dash/ajax";
-    const URL_DASHBOARD = "dash/ajax";
+    const URL_DASHBOARD = "dashboard/home";
     const URL_LOGIN     = "user/login";
-    const URL_LOGOUT    = "logout";
     const URL_NEW_USER  = "user/new";
     const URL_INS_NEW   = "user/insert";
     const URL_WELCOME   = "";
+    const URL_LOGOUT    = "user/logout";
     /**
      * Redirect to chosen url.
      *

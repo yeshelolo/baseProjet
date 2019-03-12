@@ -308,6 +308,11 @@ $hooks = Hooks::get();
                         <i class="fas fa-sign-out-alt"></i> <span> Déconnexion </span>
                     </a>
                 </li>
+                <li class="bg-red-active">
+                    <a href="<?= DIR  ?>">
+                        <i class="fas fa-sign-out-alt"></i> <span> Déconnexion </span>
+                    </a>
+                </li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

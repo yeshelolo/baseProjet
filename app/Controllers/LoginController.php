@@ -13,6 +13,7 @@ use Core\Controller;
 use Core\View;
 use Helpers\hError;
 use Helpers\hUrl;
+use Helpers\Session;
 use Helpers\Url;
 use Models\UserModel;
 
@@ -58,6 +59,15 @@ class LoginController extends Controller
         if(empty($user)){
             hUrl::redirectFromError(Url::URL_WELCOME, hError::BAD_PASSWORD);
         }
+
+        Url::redirect(Url::URL_DASHBOARD);
+
+    }
+
+    public function logOut()
+    {
+        Session::destroy();
+        Url::redirect("");
 
     }
 

@@ -16,6 +16,7 @@ use Helpers\Url;
 /* Define routes. */
 Router::any('', 'Controllers\LoginController@index');
 Router::any(Url::URL_LOGIN, 'controllers\LoginController@login');
+Router::any(Url::URL_LOGOUT, 'controllers\LoginController@logout');
 
 Router::any(Url::URL_NEW_USER, 'controllers\NewUserController@index');
 Router::any(Url::URL_INS_NEW, 'controllers\NewUserController@insertNewUSer');
