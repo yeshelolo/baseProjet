@@ -8,7 +8,7 @@ return [
     'welcome_text'    => 'Bienvenue',
     'welcome_message' => '
 		Bonjour, bienvenue dans le contrôleur de bienvenue ! <br/>
-		Ce contenu peut être changé via le fichier: <code>app/views/welcome/welcome.php</code>
+		Ce contenu peut être changé via le fichier: <code>app/views/welcome/login.php</code>
 	',
 
     // Subpage method

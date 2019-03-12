@@ -5,25 +5,44 @@
 use Core\Error;
 
 ?>
-<div class="container content">
-	<div class="row">
-		<div class="col-md-12">
+<section class="content-header">
+    <h1>
+        404 Error Page
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">404 error</li>
+    </ol>
+</section>
 
-			<h1>404</h1>
+<!-- Main content -->
+<section class="content">
+    <div class="error-page">
+        <h2 class="headline text-yellow"> 404</h2>
 
-			<?php echo $data['error']; ?>
+        <div class="error-content">
+            <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
 
-			<hr />
+            <p>
+                We could not find the page you were looking for.
+                Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search form.
+            </p>
 
-			<h3>The page you were looking for could not be found</h3>
-			<p>This could be the result of the page being removed, the name being changed or the page being temporarily unavailable</p>
-			<h3>Troubleshooting</h3>
+            <form class="search-form">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search">
 
-			<ul>
-			  <li>If you spelled the URL manually, double check the spelling</li>
-			  <li>Go to our website's home page, and navigate to the content in question</li>
-			</ul>
-
-		</div>
-	</div>
-</div>
+                    <div class="input-group-btn">
+                        <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.input-group -->
+            </form>
+        </div>
+        <!-- /.error-content -->
+    </div>
+    <!-- /.error-page -->
+</section>
+<!-- /.content -->

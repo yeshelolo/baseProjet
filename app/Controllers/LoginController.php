@@ -10,6 +10,11 @@ namespace Controllers;
 
 
 use Core\Controller;
+use Core\View;
+use Helpers\hError;
+use Helpers\hUrl;
+use Helpers\Url;
+use Models\UserModel;
 
 class LoginController extends Controller
 {
@@ -27,10 +32,35 @@ class LoginController extends Controller
 
     }
 
+    public function index()
+    {
+        $data = [];
+
+        View::renderTemplate('header', $data);
+        View::render('login/login', $data);
+        View::renderTemplate('footer', $data);
+
+        exit;
+    }
+
     public function login()
     {
-        $log = $_POST["login"];
+        $log = $_POST["mail"];
         $pwd = $_POST["password"];
+
+        if(empty($log) || empty($pwd)){
+            hUrl::redirectFromError(Url::URL_WELCOME, hError::USER_NOT_EXIST);
+        }
+
+        $model = new UserModel();
+        $user = $model->getUserByMailAndPwd($log , $pwd);
+
+        if(empty($user)){
+            hUrl::redirectFromError(Url::URL_WELCOME, hError::BAD_PASSWORD);
+        }
+
     }
+
+
 
 }

@@ -8,7 +8,7 @@ return [
     'welcome_text'    => 'Witaj',
     'welcome_message' => '
 		Cześć, witaj z kontrolera welcome! <br/>
-		Tą treść możesz zmienić w pliku <code>app/views/welcome/welcome.php</code>
+		Tą treść możesz zmienić w pliku <code>app/views/welcome/login.php</code>
 	',
 
     // Subpage method

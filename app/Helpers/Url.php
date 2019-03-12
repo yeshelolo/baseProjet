@@ -15,11 +15,16 @@ namespace Helpers;
  */
 class Url
 {
-    const URL_SEARCH = "search";
-    const URL_WRITE = "write";
-    const URL_VERIFY = "verify";
+    const URL_SEARCH    = "search";
+    const URL_WRITE     = "write";
+    const URL_VERIFY    = "verify";
     const URL_DASH_AJAX = "dash/ajax";
-    const URL_LOGOUT = "logout";
+    const URL_DASHBOARD = "dash/ajax";
+    const URL_LOGIN     = "user/login";
+    const URL_LOGOUT    = "logout";
+    const URL_NEW_USER  = "user/new";
+    const URL_INS_NEW   = "user/insert";
+    const URL_WELCOME   = "";
     /**
      * Redirect to chosen url.
      *

@@ -14,15 +14,13 @@ use Helpers\Hooks;
 use Helpers\Url;
 
 /* Define routes. */
-Router::any('', 'Controllers\Welcome@index');
-Router::any('subpage', 'Controllers\Welcome@subPage');
+Router::any('', 'Controllers\LoginController@index');
+Router::any(Url::URL_LOGIN, 'controllers\LoginController@login');
 
-Router::any(Url::URL_SEARCH, 'Controllers\Welcome@search');
-Router::any(Url::URL_WRITE, 'Controllers\Welcome@insertBlock');
-Router::any(Url::URL_VERIFY, 'controllers\Welcome@verifContrat');
-Router::any(Url::URL_DASH_AJAX, 'controllers\Welcome@ajax');
-Router::any(Url::URL_LOGOUT, 'controllers\Welcome@logOut');
+Router::any(Url::URL_NEW_USER, 'controllers\NewUserController@index');
+Router::any(Url::URL_INS_NEW, 'controllers\NewUserController@insertNewUSer');
 
+Router::any(Url::URL_DASHBOARD, 'controllers\DashboardController@index');
 
 
 /* Module routes. */

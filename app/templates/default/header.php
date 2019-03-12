@@ -320,6 +320,9 @@ $hooks = Hooks::get();
         <!-- Main content -->
         <section class="content container-fluid" style="padding-top: 0px">
 
+            <div class="container"> <?= Session::message("danger"); ?></div>
+            <div class="container"> <?= Session::message("success"); ?></div>
+
 <?php endif;?>
 <?php
 //hook for running code after body tag

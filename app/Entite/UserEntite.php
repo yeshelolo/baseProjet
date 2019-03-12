@@ -37,5 +37,4 @@ class UserEntite
     {
         return $this->{UserModel::F_PSEUDO};
     }
-
 }

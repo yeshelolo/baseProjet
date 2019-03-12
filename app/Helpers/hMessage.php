@@ -18,6 +18,8 @@ class hMessage
     const DEMANDE_TOKEN = 300;
     const PASSWORD_RESET = 301;
 
+    const SUCCESS_CREATE = 302;
+
 
     private static $errors = [
         // Machine Errors
@@ -26,6 +28,7 @@ class hMessage
         // IHM
         self::DEMANDE_TOKEN => "Demande de changement de mot de passe effectuée , verifiez vos mails !",
         self::PASSWORD_RESET => "Votre mot de passe à bien été initialisé !",
+        self::SUCCESS_CREATE => "Vous voilà maintenant Membres !",
     ];
 
     public static function getMessage($error)

@@ -20,14 +20,12 @@ class UserModel extends Model
     const F_MAIL    = "mail";
     const F_NOM     = "nom";
     const F_PRENOM  = "prenom";
-    const F_PSEUDO  = "pseudo";
     const F_PWD     = "password";
 
     private $f_id       = self::F_ID;
     private $f_mail     = self::F_MAIL;
     private $f_nom      = self::F_NOM;
     private $f_prenom   = self::F_PRENOM;
-    private $f_pseudo   = self::F_PSEUDO;
     private $f_pwd      = self::F_PWD;
 
     private $table = Database::USR;
@@ -44,6 +42,8 @@ class UserModel extends Model
      */
     public function getUserByMailAndPwd($mail , $pwd)
     {
+        $pwd = md5($pwd);
+
         $ps = [
             ":mail"=> $mail ,
             ":pwd"=>$pwd
@@ -62,18 +62,19 @@ class UserModel extends Model
         return $rows[0];
     }
 
+
     /**
      * @param String $pseudo
      * @return UserEntite|null
      */
-    public function getUserByPseudo($pseudo)
+    public function getUserByMail($mail)
     {
         $ps = [
-            ":psd"=> $pseudo ,
+            ":mail"=> $mail ,
         ];
 
         $sql = "SELECT * FROM $this->table ";
-        $sql.= "WHERE $this->f_pseudo = :psd ";
+        $sql.= "WHERE $this->f_mail = :mail ";
 
         $rows = $this->db->select($sql , $ps , \PDO::FETCH_CLASS , UserEntite::class);
 
@@ -105,5 +106,18 @@ class UserModel extends Model
         $sql.= "WHERE $this->f_id IN (:in) ";
 
         return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , UserEntite::class);
+    }
+
+    public function insertNewUser($nom , $prenom ,$login , $password)
+    {
+        $password = md5($password);
+        $data =[
+            self::F_NOM     => $nom,
+            self::F_PRENOM  => $prenom,
+            self::F_MAIL    => $login,
+            self::F_PWD     => $password,
+        ];
+
+        $this->db->insert($this->table , $data);
     }
 }

@@ -7,7 +7,7 @@ return [
     'welcome_text'    => 'Bun venit',
     'welcome_message' => '
 		Bună, bun venit la controlerul <code>welcome</code>! <br/>
-		Acest conținut poate fi modificat în <code>/app/views/welcome/welcome.php</code>
+		Acest conținut poate fi modificat în <code>/app/views/welcome/login.php</code>
 	',
     // Metoda 'subpage'
     'subpage_text'    => 'Subpagina',
