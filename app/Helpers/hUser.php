@@ -18,6 +18,26 @@ class hUser
     const USER_MAIL = "userMail";
     const USER_ID = "userId";
 
+    public static function getNom()
+    {
+        return Session::get(self::USER_NAME);
+    }
+
+    public static function getPrenom()
+    {
+        return Session::get(self::USER_FIRST_NAME);
+    }
+
+    public static function displayFullName()
+    {
+        return Session::get(self::USER_NAME) . " " . Session::get(self::USER_FIRST_NAME) ;
+    }
+
+    public static function getMail()
+    {
+        return Session::get(self::USER_MAIL);
+    }
+
     public static function isConnected()
     {
         if(!empty(Session::get(self::USER_ID))){

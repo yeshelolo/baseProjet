@@ -20,50 +20,29 @@ use Helpers\Url;
 
         <form action="<?= DIR . Url::URL_INS_NEW ?>" method="post">
             <div class="form-group has-feedback">
-                <input name="nom" type="text" class="form-control" placeholder="Nom">
+                <input id="nom" name="nom" type="text" class="form-control" placeholder="Nom">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="prenom" type="text" class="form-control" placeholder="prenom">
+                <input id="prenom" name="prenom" type="text" class="form-control" placeholder="prenom">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="mail" type="email" class="form-control" placeholder="Email">
+                <input id="mail" name="mail" type="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="password" type="password" class="form-control" placeholder="Password">
+                <input id="password" name="password" type="password" class="form-control" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="new_password" type="password" class="form-control" placeholder="Retype password">
+                <input id="new_password" name="new_password" type="password" class="form-control" placeholder="Retype password">
                 <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
             </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> I agree to the <a href="#">terms</a>
-                        </label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                </div>
-                <!-- /.col -->
-            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-flat" disabled>Je m'inscris !</button>
         </form>
-
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-                Facebook</a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-                Google+</a>
-        </div>
-
-        <a href="login.html" class="text-center">I already have a membership</a>
+        <hr>
+        <a href="<?= DIR ?>" class="btn btn-success btn-flat btn-block">Je suis déjà membre !</a>
     </div>
     <!-- /.form-box -->
 </div>
@@ -75,5 +54,26 @@ use Helpers\Url;
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */
         });
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    $("#mail").on("input",function(){
+        if(validateEmail($(this).val())){
+            $(this).css("border" , "1px solid #d2d6de");
+        }else{
+            $(this).css("border" , "2px solid red");
+        }
+    });
+
+    $("#new_password").on("input", function(){
+        if($(this).val() == $("#password").val()){
+            $(this).css("border" , "1px solid #d2d6de");
+        }else{
+            $(this).css("border" , "2px solid red");
+        }
     });
 </script>

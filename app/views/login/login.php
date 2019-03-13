@@ -24,26 +24,13 @@ use Helpers\Url;
                 <input name="password" type="password" class="form-control" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <div class="row">
-                <div class="col-xs-8" style="padding-left: 15px">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> Remember Me
-                        </label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                </div>
-                <!-- /.col -->
-            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Se connecter</button>
+            <hr>
+            <a href="#" class="btn btn-danger btn-block btn-flat">J'ai oublier mon mot de passe !</a>
+            <a href="<?=DIR . Url::URL_NEW_USER ?>" class="btn btn-success btn-block btn-flat">Devenir Membre !</a>
+
         </form>
-
-        <!-- /.social-auth-links -->
-
-        <a href="#">J'ai oublier mon mot de passe !</a><br>
-        <a href="<?=DIR . Url::URL_NEW_USER ?>" class="text-center">Devenir Membre !</a>
 
     </div>
     <!-- /.login-box-body -->

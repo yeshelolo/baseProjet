@@ -171,7 +171,7 @@ class Session
     {
         $msg = self::pull($sessionName);
         if (!empty($msg)) {
-            return "<div class='alert alert-{$sessionName} alert-dismissable text-center'>
+            return "<div class='alert alert-{$sessionName} alert-dismissable text-center' style='margin-top: 10px'>
                     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
                     <h4><i class='fa fa-check pull-left'></i> ".$msg.'</h4>
                   </div>';

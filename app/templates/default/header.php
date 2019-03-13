@@ -18,8 +18,8 @@ $hooks = Hooks::get();
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon"                   type="image/x-icon" href="<?= Url::templatePath() . "pictures/fav-flamingo.ico" ?>" />
-<link rel="apple-touch-icon-precomposed"    sizes="57x57"       href="<?= Url::templatePath() . "pictures/fav-flamingo.ico" ?>" />
+<link rel="shortcut icon"                   type="image/x-icon" href="<?= Url::templatePath() . "pictures/gear.ico" ?>" />
+<link rel="apple-touch-icon-precomposed"    sizes="57x57"       href="<?= Url::templatePath() . "pictures/gear.ico" ?>" />
 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -74,6 +74,9 @@ $hooks = Hooks::get();
     <!-- PLUGINS -->
     <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-slider/bootstrap-slider.js"  ?>"></script>
     <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"  ?>"></script>
+    <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js"  ?>"></script>
+
+    <!-- Socket.io -->
     <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js"  ?>"></script>
 
 </head>
@@ -199,11 +202,6 @@ $hooks = Hooks::get();
                     </li>
                     <!-- User Account Menu -->
                     <li class="dropdown user user-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span>Bonjour  <strong><?php //TODO USER HELPER  ?></strong> ! </span>
-                        </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
@@ -247,6 +245,8 @@ $hooks = Hooks::get();
             </div>
         </nav>
     </header>
+
+    <?php if(\Helpers\hUser::isConnected()): ?>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="control-sidebar main-sidebar">
 
@@ -259,9 +259,9 @@ $hooks = Hooks::get();
                     <img src="<?= Url::templatePath() ."plugins/AdminLTE/dist/img/user2-160x160.jpg"?>" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <?php //TODO USER HELPER ?>
                     <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i></a>
+                    <i class="fa fa-circle text-success"></i>
+                    <span>Bonjour  <strong><?= \Helpers\hUser::getPrenom()  ?></strong> ! </span>
                 </div>
             </div>
 
@@ -313,6 +313,8 @@ $hooks = Hooks::get();
         </section>
         <!-- /.sidebar -->
     </aside>
+
+    <?php endif; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
