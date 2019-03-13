@@ -14,7 +14,8 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "almasaeed2010/adminlte": "~2.4"
+        "almasaeed2010/adminlte": "~2.4",
+        "wisembly/elephant.io": "dev-master"
     },
     "autoload": {
         "psr-4": {"": "app/"}

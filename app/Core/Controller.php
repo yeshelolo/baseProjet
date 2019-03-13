@@ -39,8 +39,10 @@ abstract class Controller
      */
     public function __construct()
     {
-        if(!hUser::isConnected()  && Url::detectUri() != "/"){
-            hUrl::redirectFromError("", hError::NOT_CONNECTED);
+        if(!hUser::isConnected() &&  Url::detectUri() != "/"  ){
+            if(Url::detectUri() != Url::URL_LOGIN){
+                hUrl::redirectFromError("", hError::NOT_CONNECTED);
+            }
         }
         /* initialise the views object */
         $this->view = new View();

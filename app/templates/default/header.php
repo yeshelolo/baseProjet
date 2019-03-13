@@ -303,13 +303,8 @@ $hooks = Hooks::get();
                         </a>
                     </li>
                 <?php //endif; ?>
-                <li class="">
-                    <a href="<?php //TODO redirect ?>">
-                        <i class="fas fa-sign-out-alt"></i> <span> Déconnexion </span>
-                    </a>
-                </li>
                 <li class="bg-red-active">
-                    <a href="<?= DIR  ?>">
+                    <a href="<?= DIR . Url::URL_LOGOUT ?>">
                         <i class="fas fa-sign-out-alt"></i> <span> Déconnexion </span>
                     </a>
                 </li>
