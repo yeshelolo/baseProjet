@@ -30,6 +30,7 @@ class hError
     const USER_ALREADY_EXIST    = 621;
     const USER_NOT_EXIST        = 622;
     const NOT_ENOUGH_DATA       = 623;
+    const NOT_CONNECTED         = 624;
 
     private static $errors = [
         // Password Errors
@@ -54,6 +55,7 @@ class hError
         self::USER_ALREADY_EXIST    => "Utilisateur déjà existant !",
         self::USER_NOT_EXIST        => "L'identifiant n'existe pas !",
         self::NOT_ENOUGH_DATA       => "Ooops des champs n'ont pas été remplis !",
+        self::NOT_CONNECTED         => "Merci de vous connecter pour effectuer cette action",
     ];
 
     public static function getMessage($error)

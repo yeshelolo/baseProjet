@@ -10,6 +10,11 @@
  */
 namespace Core;
 
+use Helpers\hError;
+use Helpers\hUrl;
+use Helpers\hUser;
+use Helpers\Url;
+
 /**
  * Core controller, all other controllers extend this base controller.
  */
@@ -34,6 +39,9 @@ abstract class Controller
      */
     public function __construct()
     {
+        if(!hUser::isConnected()  && Url::detectUri() != "/"){
+            hUrl::redirectFromError("", hError::NOT_CONNECTED);
+        }
         /* initialise the views object */
         $this->view = new View();
 
