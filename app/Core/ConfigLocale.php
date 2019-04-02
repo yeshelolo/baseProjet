@@ -32,7 +32,7 @@ class ConfigLocale
         /*
          * Define relative base path.
          */
-        define('DIR', '/wkblockchain/');
+        define('DIR', '/baseProjet/');
 
         /*
          * Set default controller and method for legacy calls.
