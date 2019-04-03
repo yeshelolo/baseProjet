@@ -198,7 +198,7 @@ class Database extends PDO
      * @param array  $where array of columns and values
      * @param int    $limit limit number of records
      */
-    public function delete($table, $where, $limit = 1)
+    public function delete($table, $where, $limit = null)
     {
         ksort($where);
 
