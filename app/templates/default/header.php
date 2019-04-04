@@ -13,7 +13,6 @@ $hooks = Hooks::get();
 <!DOCTYPE html>
 <head lang="<?php echo LANGUAGE_CODE; ?>">
 
-
 <title>BaseProjet</title>
 
 <meta charset="UTF-8">
@@ -21,63 +20,69 @@ $hooks = Hooks::get();
 <link rel="shortcut icon"                   type="image/x-icon" href="<?= Url::templatePath() . "pictures/gear.ico" ?>" />
 <link rel="apple-touch-icon-precomposed"    sizes="57x57"       href="<?= Url::templatePath() . "pictures/gear.ico" ?>" />
 
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/bs3/css/bootstrap.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "css/w3c.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "css/style.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/font-awesome/css/font-awesome.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/fontawesome/css/all.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/jqueryUi/jquery-ui.min.css"?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/timePicker/jquery-ui-timepicker-addon.css" ?>">
+<!-- CSS -->
+<?php 
+    Assets::css([
+        Url::templatePath() . "plugins/bs3/css/bootstrap.css",
+        Url::templatePath() . "css/w3c.css",
+        Url::templatePath() . "plugins/font-awesome/css/font-awesome.css",
+        Url::templatePath() . "plugins/fontawesome/css/all.css",
+        Url::templatePath() . "plugins/jqueryUi/jquery-ui.min.css",
+        Url::templatePath() . "plugins/timePicker/jquery-ui-timepicker-addon.css",
+        
+        // Datatable
+        Url::templatePath() . "plugins/datatable/datatables.min.css",
+        Url::templatePath() . "plugins/datatable/css/dataTables.bootstrap4.css",
+        Url::templatePath() . "plugins/datatable/responsive/css/responsive.dataTables.css",
+        Url::templatePath() . "plugins/datatable/responsive/css/responsive.bootstrap.css",
+        
+        // Admin LTE
+        Url::templatePath() . "plugins/AdminLTE/dist/css/AdminLTE.min.css",
+        Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-slider/slider.css",
+        Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
+        Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/all.css",
+        Url::templatePath() . "plugins/AdminLTE/dist/css/skins/_all-skins.min.css",
 
-    <link rel="stylesheet/less" type="text/css" href="<?= Url::templatePath() . "plugins/font-awesome/less/font-awesome.less" ?>" />
-    <link rel="stylesheet/less" type="text/css" href="<?= Url::templatePath() . "plugins/font-awesome/less/icons.less" ?>" />
+        // Site
+        Url::templatePath() . "css/style.css",
+    ]);
 
-    <!-- JS -->
-    <script src="<?= Url::templatePath() . "js/jQuery-V3.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/bs3/js/bootstrap.js" ?>"></script>
-
-    <script src="<?= Url::templatePath() . "plugins/fontawesome/js/all.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/jqueryUi/jquery-ui.min.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/snap-svg/snap.svg-min.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/panzoom/panzoom.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/timePicker/jquery-ui-timepicker-addon.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/timePicker/jquery.set.french.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/timePicker/touch.punch.js" ?>"></script>
-
-    <!-- DATABLE -->
-    <!-- JS -->
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/datatable/datatables.min.css" ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/datatable/css/dataTables.bootstrap4.css" ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/datatable/responsive/css/responsive.dataTables.css" ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/datatable/responsive/css/responsive.bootstrap.css" ?>">
-    <!-- CSS -->
-    <script src="<?= Url::templatePath() . "plugins/datatable/datatables.min.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/datatable/js/dataTables.bootstrap.min.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/datatable/responsive/js/dataTables.responsive.js" ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/datatable/responsive/js/responsive.bootstrap4.js" ?>"></script>
-
-    <!-- ADMIN LTE -->
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/AdminLTE/dist/css/AdminLTE.min.css" ?>">
-    <!-- PLUGINS -->
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-slider/slider.css"  ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"  ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/all.css"  ?>">
-    <link rel="stylesheet" href="<?= Url::templatePath() . "plugins/AdminLTE/dist/css/skins/_all-skins.min.css"  ?>">
-    <!-- JS -->
-    <script src="<?= Url::templatePath() . "plugins/AdminLTE/dist/js/adminlte.min.js"  ?>"></script>
-    <!-- PLUGINS -->
-    <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-slider/bootstrap-slider.js"  ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"  ?>"></script>
-    <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js"  ?>"></script>
-
-    <!-- Socket.io -->
-    <script src="<?= Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js"  ?>"></script>
+    // hook for plugging in css
+    $hooks->run('css');
+?>
+    
+<!-- JS -->
+<?php 
+    Assets::js([
+        Url::templatePath() . "js/jQuery-V3.js",
+        Url::templatePath() . "plugins/bs3/js/bootstrap.js",
+        Url::templatePath() . "plugins/fontawesome/js/all.js",
+        Url::templatePath() . "plugins/jqueryUi/jquery-ui.min.js",
+        Url::templatePath() . "plugins/snap-svg/snap.svg-min.js",
+        Url::templatePath() . "plugins/panzoom/panzoom.js",
+        Url::templatePath() . "plugins/timePicker/jquery-ui-timepicker-addon.js",
+        Url::templatePath() . "plugins/timePicker/jquery-ui-timepicker-addon.js",
+        Url::templatePath() . "plugins/timePicker/jquery.set.french.js",
+        Url::templatePath() . "plugins/timePicker/touch.punch.js",
+        
+        // Datatable
+        Url::templatePath() . "plugins/datatable/datatables.min.js",
+        Url::templatePath() . "plugins/datatable/js/dataTables.bootstrap.min.js",
+        Url::templatePath() . "plugins/datatable/responsive/js/dataTables.responsive.js",
+        Url::templatePath() . "plugins/datatable/responsive/js/responsive.bootstrap4.js",
+        
+        // Admin LTE
+        Url::templatePath() . "plugins/AdminLTE/dist/js/adminlte.min.js",
+        Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-slider/bootstrap-slider.js",
+        Url::templatePath() . "plugins/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+        Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js",
+        
+        // Socket.io
+        Url::templatePath() . "plugins/AdminLTE/plugins/iCheck/icheck.js"
+    ]);
+?>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
