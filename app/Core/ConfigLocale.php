@@ -17,7 +17,7 @@ use Helpers\Session;
 /**
  * Configuration constants and options.
  */
-class ConfigLocale
+class Config
 {
     /**
      * Executed as soon as the framework runs.
