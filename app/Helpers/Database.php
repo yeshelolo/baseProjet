@@ -10,6 +10,7 @@
  */
 namespace Helpers;
 
+use Core\Logger;
 use PDO;
 
 /**
@@ -43,6 +44,7 @@ class Database extends PDO
         $group = !$group ?  [
             'type' => DB_TYPE,
             'host' => DB_HOST,
+            'port' => DB_PORT,
             'name' => DB_NAME,
             'user' => DB_USER,
             'pass' => DB_PASS,
@@ -51,6 +53,7 @@ class Database extends PDO
         // Group information
         $type = $group['type'];
         $host = $group['host'];
+        $port = $group['port'];
         $name = $group['name'];
         $user = $group['user'];
         $pass = $group['pass'];
@@ -64,17 +67,18 @@ class Database extends PDO
         }
 
         try {
-            // I've run into problem where
-            // SET NAMES "UTF8" not working on some hostings.
-            // Specifiying charset in DSN fixes the charset problem perfectly!
-            $instance = new self("$type:host=$host;dbname=$name;charset=utf8", $user, $pass);
+            if ( empty($port) ) {
+                $instance = new self("$type:host=$host;dbname=$name;charset=utf8", $user, $pass);
+            } else {
+                $instance = new self("$type:host=$host;port=$port;dbname=$name;charset=utf8", $user, $pass);
+            }
             $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Setting Database into $instances to avoid duplication
             self::$instances[$id] = $instance;
 
             return $instance;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             //in the event of an error record the error to ErrorLog.html
             Logger::newMessage($e);
             Logger::customErrorMsg();
