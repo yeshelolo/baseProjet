@@ -57,30 +57,11 @@ class ConfigLocale
          * Database engine default is mysql.
          */
         define('DB_TYPE', 'mysql');
-
-        /*
-         * Database host default is localhost.
-         */
         define('DB_HOST', 'localhost');
-
-        /*
-         * Database name.
-         */
+        define('DB_PORT', '3306');
         define('DB_NAME', 'axa_blockchain');
-
-        /*
-         * Database username.
-         */
         define('DB_USER', 'root');
-
-        /*
-         * Database password.
-         */
         define('DB_PASS', 'root');
-
-        /*
-         * PREFER to be used in database calls default is smvc_
-         */
         define('PREFIX', 'smvc_');
 
         /*
